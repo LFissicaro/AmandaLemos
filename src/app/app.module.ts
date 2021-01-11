@@ -8,6 +8,8 @@ import { CarouselModule } from 'primeng/carousel';
 import { CalculatorComponent } from './components/calculator/calculator.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { CheckboxModule } from 'primeng/checkbox';
+
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { HeaderComponent } from './components/header/header.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CarouselModule
+    CarouselModule,
+    CheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
