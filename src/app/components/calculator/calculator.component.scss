@@ -4,12 +4,6 @@
     margin-left: 30%;
 }
 
-.form2{
-    width: 40%;
-    margin-top: 3%;
-    margin-left: 30%;
-}
-
 .tittle{
     font: 'AllerDisplay';
     font-size: 50px;
@@ -18,7 +12,7 @@
 }
 
 .titulo2{
-    margin-top: 5%;
+    margin-top: 10%;
     font: 'AllerDisplay';
     font-size: 30px;
     text-align: center;
@@ -33,6 +27,14 @@
     text-align: center;
 }
 
+.formulario2{
+    justify-content: center;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 5%;
+    // text-align: center;
+}
+
 .questao{
     margin-top: 5%;
 }
@@ -42,9 +44,16 @@
     font-family: 'MontSerrat';
 }
 
+.input{
+    height: 25px;
+    width: 30%;
+    border-radius: 8px;
+    border-width: thin;
+}
+
 .calcular{
     width: 100%;
-    margin-top: 10%;
+    margin-top: 20%;
     height: 40px;
     background-color: #ffe277;
     border-radius: 10px;
@@ -61,6 +70,7 @@
 }
 
 .checkbox{
+    margin-top: 2%;
     font-family: 'MontSerrat';
     font-size: 15px;
 }
