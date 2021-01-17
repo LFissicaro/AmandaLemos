@@ -9,8 +9,8 @@ import { CalculatorComponent } from './components/calculator/calculator.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CheckboxModule } from 'primeng/checkbox';
-
-
+import {SelectButtonModule} from 'primeng/selectbutton';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,9 @@ import { CheckboxModule } from 'primeng/checkbox';
     BrowserModule,
     AppRoutingModule,
     CarouselModule,
-    CheckboxModule
+    CheckboxModule,
+    CommonModule,
+    SelectButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

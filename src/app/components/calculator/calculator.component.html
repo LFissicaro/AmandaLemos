@@ -1,3 +1,4 @@
+<!-- Primeiro formulario -->
 <div class="form"*ngIf="form1">
     <div class="tittle">
         CALCULANDO MEU METABOLISMO
@@ -11,38 +12,53 @@
     </div>
     <div class="formulario">
         <div class="questao">
+            <label class="formLabel">Idade:</label>
+            <input id="idadeInput" class="input" type="number" #idadeInput><br>
+            <div class="invalidMessage">
+                <label *ngIf="invIdade">{{idadeMsg}}</label>
+            </div>
+        </div>
+        <div class="questao">
             <label class="formLabel">Peso:</label>
-            <input class="input" type="text">
+            <input id="pesoInput" class="input" type="number" #pesoInput>kg<br>
+            <div class="invalidMessage">
+                <label *ngIf="invPeso">{{pesoMsg}}</label>
+            </div>
         </div>
         <div class="questao">
             <label class="formLabel">Altura:</label>
-            <input class="input" type="text">
+            <input id="alturaInput" class="input" type="number" #alturaInput>m<br>
+            <div class="invalidMessage">
+                <label *ngIf="invAlt">{{alturaMsg}}</label>
+            </div>
         </div>
-        <button class="calcular" (click)="forms()">CALCULAR</button>
+        <button class="calcular" (click)="firstForm(idadeInput.value, pesoInput.value, alturaInput.value)">{{button1}}</button>
     </div>
 </div>
+<!-- Segundo Formulario -->
 <div class="form" *ngIf="form2">
     <div class="titulo2">
         Calculando o Seu NAF
     </div>
     <div class="formulario2">
-        <label class="formLabel" style="font-size: 18px">Você é homem ou mulher:</label><br>
-        <p-checkbox class="checkbox" label=" Homem"></p-checkbox><br>
-        <p-checkbox class="checkbox" label=" Mulher"></p-checkbox><br>        
+        <label class="formLabel" style="font-size: 18px">Escolha o seu Sexo:</label><br>
+        <button id="H" [ngClass]="btnClass" (click)="validateSexo(homem.id)" #homem>Homem</button>
+        <button id="M" [ngClass]="btnClass2" (click)="validateSexo(mulher.id)" #mulher>Mulher</button>
     </div>
     <div class="formulario2">
         <div class="questao">
             <label class="formLabel" style="font-size: 18px">Escolha o seu estilo de vida:</label>
-            <p-checkbox class="checkbox" label=" Sedentário"></p-checkbox><br>
-            <p-checkbox class="checkbox" label=" Menos ativo"></p-checkbox><br>
-            <p-checkbox class="checkbox" label=" Trabalha sentado e faz exercício leve"></p-checkbox><br>
-            <p-checkbox class="checkbox" label=" Trabalha ativo o dia todo"></p-checkbox><br>
-            <p-checkbox class="checkbox" label=" Ativo"></p-checkbox><br>
-            <p-checkbox class="checkbox" label=" Muito ativo"></p-checkbox><br>
+            <button class="selectButton">Sedentário</button>
+            <button class="selectButton">Menos ativo</button>
+            <button class="selectButton">Trabalha sentado e faz exercício leve</button>
+            <button class="selectButton">Trabalha ativo</button>
+            <button class="selectButton">Ativo</button>
+            <button class="selectButton">Muito ativo</button>
         </div>
-        <button class="calcular" (click)="forms()">CALCULAR</button>
+        <button class="calcular" (click)="secondForm()">CALCULAR</button>
     </div>
 </div>
+<!-- Terceiro Formulario -->
 <div class="form" *ngIf="form3">
     <div class="titulo2">
         Calculando o seu NEI
