@@ -1,0 +1,30 @@
+//pc
+@media (min-width: 599px){
+    .txt{
+        margin-top: 10%;    
+    }
+
+    .aboutTexts{
+        text-align: center;
+        margin-left: 30%;
+        width: 40%;
+        font-family: "MontSerrat";
+        font-size: 25px;
+    }
+}
+
+//mobile
+@media (max-width: 599px){
+    .txt{
+        margin-top: 10%;    
+    }
+
+    .aboutTexts{
+        text-align: center;
+        margin-left: 20%;
+        width: 60%;
+        font-family: "MontSerrat";
+        font-size: 12px;
+        height: 420px;
+    }
+}

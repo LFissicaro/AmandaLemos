@@ -1,72 +1,171 @@
 <!-- Primeiro formulario -->
-<div class="form"*ngIf="form1">
-    <div class="tittle">
-        CALCULANDO MEU METABOLISMO
+<!-- Facebook Pixel Code -->
+<script> !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
+   if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
+   t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0];
+   s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js%27'); 
+   fbq('init', '718523445450816'); fbq('track', 'PageView'); 
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=718523445450816&ev=PageView&noscript=1" />
+</noscript>
+<!-- End Facebook Pixel Code -->
+<div class="tittle">
+    CALCULANDO MEU METABOLISMO
+</div>
+<div class="form0" *ngIf="form0">
+    <div class="initialText">
+        {{initialText}}
     </div>
-    <!-- <div class="video">
-        <iframe width="100%" height="500px" src="https://www.youtube.com/embed/Mue3PQMOhaA" frameborder="0"
-            allowfullscreen></iframe>
-    </div> -->
+    <div class="initialText">
+        {{initialText2}}
+    </div>
+    <div class="initialText">
+        {{initialText3}}
+    </div>
+    <div class="initialText">
+        {{initialText4}}
+    </div>
+    <div class="initialText initialTextRed">
+        {{initialText5}}
+    </div>
+    <button class="calcular" (click)="form1 = true; form0 = false; backToTop()">Comece a Calcular</button>
+</div>
+<div class="form0" *ngIf="form1">
     <div class="titulo2">
         Calculando o seu IMC
     </div>
+    <div class="initialText">
+        {{imcText}}
+    </div>
     <div class="formulario">
         <div class="questao">
-            <label class="formLabel">Idade:</label>
+            <label class="formLabel">Idade(anos):</label>
             <input id="idadeInput" class="input" type="number" #idadeInput><br>
             <div class="invalidMessage">
                 <label *ngIf="invIdade">{{idadeMsg}}</label>
             </div>
         </div>
         <div class="questao">
-            <label class="formLabel">Peso:</label>
-            <input id="pesoInput" class="input" type="number" #pesoInput>kg<br>
+            <label class="formLabel">Peso(kg):</label>
+            <input id="pesoInput" class="input" type="number" #pesoInput><br>
             <div class="invalidMessage">
                 <label *ngIf="invPeso">{{pesoMsg}}</label>
             </div>
         </div>
         <div class="questao">
-            <label class="formLabel">Altura:</label>
-            <input id="alturaInput" class="input" type="number" #alturaInput>m<br>
+            <label class="formLabel">Altura(m):</label>
+            <input id="alturaInput" class="input" type="number" #alturaInput><br>
             <div class="invalidMessage">
                 <label *ngIf="invAlt">{{alturaMsg}}</label>
             </div>
         </div>
-        <button class="calcular" (click)="firstForm(idadeInput.value, pesoInput.value, alturaInput.value)">{{button1}}</button>
     </div>
+    <button class="calcular"
+        (click)="firstForm(idadeInput.value, pesoInput.value, alturaInput.value); backToTop()">{{button}}</button>
 </div>
 <!-- Segundo Formulario -->
-<div class="form" *ngIf="form2">
+<div class="form0" *ngIf="form2">
     <div class="titulo2">
         Calculando o Seu NAF
     </div>
+    <div class="initialText">
+        {{nafText1}}
+    </div>
+    <div class="initialText">
+        {{nafText2}}
+    </div>
+    <div class="initialText">
+        <h3>Sedentário:</h3>
+        {{sedentario}}
+    </div>
+    <div class="initialText">
+        <h3>Menos Ativo:</h3>
+        {{menosAtivo}}
+    </div>
+    <div class="initialText">
+        <h3>Ativo:</h3>
+        {{ativo}}
+    </div>
+    <div class="initialText">
+        <h3>Muito Ativo:</h3>
+        {{muitoAtivo}}
+    </div>
+    <br>
+    <hr><br>
     <div class="formulario2">
-        <label class="formLabel" style="font-size: 18px">Escolha o seu Sexo:</label><br>
-        <button id="H" [ngClass]="btnClass" (click)="validateSexo(homem.id)" #homem>Homem</button>
-        <button id="M" [ngClass]="btnClass2" (click)="validateSexo(mulher.id)" #mulher>Mulher</button>
+        <label class="formLabel">Escolha o seu Sexo:</label><br>
+        <p-selectButton [options]="sexos" [(ngModel)]="sexo.value" optionLabel="sexo" optionValue="value">
+        </p-selectButton>
     </div>
     <div class="formulario2">
         <div class="questao">
-            <label class="formLabel" style="font-size: 18px">Escolha o seu estilo de vida:</label>
-            <button class="selectButton">Sedentário</button>
-            <button class="selectButton">Menos ativo</button>
-            <button class="selectButton">Trabalha sentado e faz exercício leve</button>
-            <button class="selectButton">Trabalha ativo</button>
-            <button class="selectButton">Ativo</button>
-            <button class="selectButton">Muito ativo</button>
+            <div class="invalidMessage" *ngIf="invStyle">
+                {{styleMessage}}
+            </div>
+            <label class="formLabel">Escolha o seu estilo de vida:</label><br>
+            <div class="opcoes">
+                <div class="opcoes p-field-checkbox">
+                    <p-radioButton value="Sedentário" [(ngModel)]="selectedStyle" label="Sedentário"></p-radioButton>
+                </div>
+                <div class="opcoes p-field-checkbox">
+                    <p-radioButton value="Menos Ativo" [(ngModel)]="selectedStyle" label="Menos Ativo"></p-radioButton>
+                </div>
+                <div class="opcoes p-field-checkbox">
+                    <p-radioButton value="Ativo" [(ngModel)]="selectedStyle" label="Ativo"></p-radioButton>
+                </div>
+                <div class="opcoes p-field-checkbox">
+                    <p-radioButton value="Muito Ativo" [(ngModel)]="selectedStyle" label="Muito Ativo"></p-radioButton>
+                </div>
+            </div>
         </div>
-        <button class="calcular" (click)="secondForm()">CALCULAR</button>
     </div>
+    <button class="calcular" (click)="secondForm(); backToTop()">CALCULAR</button>
 </div>
 <!-- Terceiro Formulario -->
-<div class="form" *ngIf="form3">
+<div class="form0" *ngIf="form3">
     <div class="titulo2">
-        Calculando o seu NEI
+        Resultado:
+        <hr>
     </div>
-    <div class="formulario">
-        <div class="questao">
-            <label class="formLabel">Idade:</label>
-            <input class="input" type="number">
-        </div>
+    <div class="result"><br>
+        O seu imc é: {{imc}} - {{imcString}}
+        <hr><br>
+        Sua taxa metabólica basal: {{tmb}} Kcal
+        <hr><br>
+        Sua Necessidade Energética Total: {{net}} Kcal
+        <hr><br>
+        A quantidade de água que voce deve beber por dia é: {{water}} L
     </div>
+    <br>
+    <hr>
+    <div class="initialText">
+        {{resultText}}
+    </div>
+    <div class="initialText">
+        {{resultText2}}
+    </div>
+    <div class="initialText">
+        {{resultText3}}
+    </div>
+    <div class="initialText">
+        {{resultText4}}
+    </div>
+    <div class="initialText">
+        {{resultText5}}
+    </div>
+    <br>
+    <hr><br>
+    <img class="finalText" src="../../../assets/images/resultList.png">
+    <hr><br>
+    <button class="calcular2" (click)="openLeadPage()">Receber Resultado por e-mail</button>
+    <button class="calcular" (click)="reloadPage()">Retornar a pagina inicial</button>
 </div>
+<div class="back-to-top" (click)="backToTop()" href="#"></div>
+
+<p-dialog class="leadDialog" header="Receber resultado por e-mail" [(visible)]="leadPage"  style="text-align: center;">
+    <label class="formLabel">Digite o seu e-mail:</label>
+    <input class="input">
+    <button class="calcular">Enviar resultado</button>
+</p-dialog>
+<!--  -->

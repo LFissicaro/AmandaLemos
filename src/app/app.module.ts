@@ -9,8 +9,15 @@ import { CalculatorComponent } from './components/calculator/calculator.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CheckboxModule } from 'primeng/checkbox';
-import {SelectButtonModule} from 'primeng/selectbutton';
+import { SelectButtonModule } from 'primeng/selectbutton';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { DialogModule } from 'primeng/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SpreadsheetsComponent } from './components/spreadsheets/spreadsheets.component';
+import { CardModule } from 'primeng/card';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +25,9 @@ import { CommonModule } from '@angular/common';
     HomeComponent,
     CalculatorComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SpreadsheetsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +35,11 @@ import { CommonModule } from '@angular/common';
     CarouselModule,
     CheckboxModule,
     CommonModule,
+    FormsModule,
+    RadioButtonModule,
+    DialogModule,
+    BrowserAnimationsModule,
+    CardModule,
     SelectButtonModule
   ],
   providers: [],
