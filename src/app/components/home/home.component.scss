@@ -1,3 +1,24 @@
-html{
-    height: 500px;
+$beje: #eefef9;
+$rosa: #d54062;
+
+.firstBlock{
+    // width: 60%;
+    // margin-left: 20%;
+    // margin-top: 5%;
+    text-align: center;
+    font-family: "MontSerrat";
+}
+
+::ng-deep{
+    .p-card{
+        background: $beje;
+    }
+}
+
+.card{
+    margin-top: 10%;
+}
+
+h3{
+    color: $rosa;
 }

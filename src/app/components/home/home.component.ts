@@ -12,19 +12,9 @@ interface City {
 })
 export class HomeComponent implements OnInit {
 
-  cities: City[];
-
-  selectedCity: City;
+  calcText: string = 'A nossa calculadora pode te orientar em diversas coisas ...';
 
   constructor() { 
-    this.cities = [
-        {name: 'New York', code: 'NY'},
-        {name: 'Rome', code: 'RM'},
-        {name: 'London', code: 'LDN'},
-        {name: 'Istanbul', code: 'IST'},
-        {name: 'Paris', code: 'PRS'}
-    ];
-    this.selectedCity = {name: 'BH', code: 'bh'};
   }
 
   ngOnInit(): void {

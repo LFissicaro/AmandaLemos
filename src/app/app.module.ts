@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpreadsheetsComponent } from './components/spreadsheets/spreadsheets.component';
 import { CardModule } from 'primeng/card';
 import { AboutComponent } from './components/about/about.component';
+import { DividerModule } from 'primeng/divider';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AboutComponent } from './components/about/about.component';
     DialogModule,
     BrowserAnimationsModule,
     CardModule,
+    DividerModule,
     SelectButtonModule
   ],
   providers: [],
