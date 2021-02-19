@@ -92,7 +92,7 @@ input[type=number] {
     text-align: center;
 
     a {
-      font-size: 12px;
+      font-size: 10px;
       color: $cinza;
       text-decoration: none;
       transition: all 0.45s;
@@ -291,7 +291,7 @@ input[type=number] {
 
   .formulario2{
       text-align: left !important;
-      width: 70%;
+      width: 65%;
       margin-left: 15%;
       // margin-top: 2%;
       // text-align: center;
@@ -439,14 +439,17 @@ input[type=number] {
 
 @media print{
   .form0, .form0 * {
-    visibility: collapse;
+    visibility: visible;
+    visibility: initial;
     top: 0;
   }
   .finalText, .finalText * {
-    visibility:hidden;
+    visibility:visible;
+    visibility: initial;
   }
   .head, .head * {
     visibility: hidden;
+    visibility:unset;
   }
   .navMenu, .navMenu * {
     visibility: hidden;

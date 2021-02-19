@@ -13,10 +13,6 @@ export class SpreadsheetsComponent implements OnInit {
   }  
 
   backToTop(){
-    // var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-    // if(currentScroll > 0){
-    //   window.requestAnimationFrame(smoothscroll);
-    // }
     window.scroll(0,0);
   }
 }

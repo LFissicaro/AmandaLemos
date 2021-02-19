@@ -13,8 +13,17 @@ interface City {
 export class HomeComponent implements OnInit {
 
   calcText: string = 'A nossa calculadora pode te orientar em diversas coisas ...';
+  items: Array<any> = [];
 
   constructor() { 
+    this.items = [
+    { name: 'assets/images/carousel.jpeg' },
+    { name: 'assets/images/carousel2.jpeg' },
+    { name: 'assets/images/carousel3.jpeg' },
+    { name: 'assets/images/carousel.jpeg' },
+    { name: 'assets/images/carousel2.jpeg' },
+    { name: 'assets/images/carousel3.jpeg' }
+  ]
   }
 
   ngOnInit(): void {

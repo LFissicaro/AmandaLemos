@@ -249,8 +249,8 @@ export class CalculatorComponent implements OnInit {
   }
 
   openLeadPage(){
-    this.leadPage = true;
-    console.log(this.leadPage);
+    // this.leadPage = true;
+    // console.log(this.leadPage);
     window.print();
   }
 

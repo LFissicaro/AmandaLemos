@@ -19,6 +19,7 @@ import { SpreadsheetsComponent } from './components/spreadsheets/spreadsheets.co
 import { CardModule } from 'primeng/card';
 import { AboutComponent } from './components/about/about.component';
 import { DividerModule } from 'primeng/divider';
+import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { DividerModule } from 'primeng/divider';
     BrowserAnimationsModule,
     CardModule,
     DividerModule,
+    Ng2CarouselamosModule,
     SelectButtonModule
   ],
   providers: [],

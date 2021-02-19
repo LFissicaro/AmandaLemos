@@ -1,111 +1,87 @@
-<!-- carousel -->
-<style type="text/css">
-  *{margin:0; padding: 0; box-sizing: border-box;}
-
-  #items-wrapper {
-    width: 100vw;
-  }
-
-  #items{
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .item {
-    flex: none;
-    width: 100%;
-    /* height: 400px; */
-    scroll-snap-align: start;
-  }
-
-  img {
-    width: 400px;
-    height: 100%;
-    object-fit: cover;
-  }
-</style>
-
-<script>
-  document.querySelector("#items").addEventListener("wheel", event => {
-      console.log(event)
-    });
-</script>
-
-<div id="items-wrapper">
-  <div id="items">
-    <div class="item"><img src="../../../assets/images/1.png"></div>
-    <div class="item"><img src="../../../assets/images/1.png"></div>
-    <div class="item"><img src="../../../assets/images/1.png"></div>
-    <div class="item"><img src="../../../assets/images/1.png"></div>
-    <div class="item"><img src="../../../assets/images/1.png"></div>
+<div class="tittle" style="margin-top: 2%;">Instagram</div>
+<div id="container">
+  <!-- carousel -->
+  <div ng2-carouselamos class="slides-wrapper carous" [items]="items" [width]="900" [$prev]="prev" [$next]="next"
+    [$item]="item">
   </div>
-</div>
-<!-- carousel -->
-<div class="firstBlock">
-  <div class="p-grid p-jc-center">
-    <div class="p-col-5" style="border: 10px;border-color: #333333;">
-      <!-- inicio conteiner -->
-      <div class="card">
-        <h3>Calculadora Metabólica</h3><br>
-        <div class="p-grid">
-          <div class="p-col-5 p-d-flex p-ai-center p-jc-center">
-            <a href="Calculadora"><img src="../../../assets/images/calculadoraPrint.jpeg" width="50%"></a>
-          </div>
-          <div class="p-col-2">
-            <p-divider layout="vertical">
-            </p-divider>
-          </div>
-          <div class="p-col-5 p-d-flex p-ai-center p-jc-center">
-            <p>
-              Com a calculadora Metabólica voce pode manter o controle da sua dieta e ficar sabendo todos os dados
-              relacionados a sua taxa metabolica, necessidade energetica total, etc
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- fim do conteiner -->
-      <!-- inicio conteiner -->
-      <div class="card">
-        <h3>Planilhas de Acompanhamento</h3><br>
-        <div class="p-grid">
-          <div class="p-col-5 p-d-flex p-ai-center p-jc-center">
-            <p>
-              Com as planilhas de acompanhamento vooce consegue desenvolver uma disciplina e manter o conotrole sobre
-              a sua alimentação e hábitos inclusive manter o registro de algumas receitas :)
-            </p>
-          </div>
-          <div class="p-col-2">
-            <p-divider layout="vertical">
-            </p-divider>
-          </div>
-          <div class="p-col-5 p-d-flex p-ai-center p-jc-center">
-            <a href="Planilhas"><img src="../../../assets/images/planilhasPrint.jpeg" width="50%"></a>
+
+  <ng-template #prev>
+    <i class="pi pi-angle-double-left" style="cursor: pointer;"></i>
+  </ng-template>
+  <ng-template #next>
+    <i class="pi pi-angle-double-right" style="cursor: pointer;"></i>
+  </ng-template>
+  <ng-template #item let-item let-i="index">
+
+    <div class="items" style="width: 100%;">
+      <img src="{{ item.name }}">
+    </div>
+
+  </ng-template>
+  <!-- carousel -->
+  <div class="firstBlock">
+    <div class="p-grid p-jc-center">
+      <div class="p-col-5 responsive" style="border: 10px;border-color: #333333;">
+        <!-- inicio conteiner -->
+        <div class="card">
+          <h3>Calculadora Metabólica</h3><br>
+          <div class="p-grid">
+            <div class="p-col-5 p-d-flex p-ai-center p-jc-center">
+              <a href="Calculadora" routerLink="/Calculadora"><img src="../../../assets/images/calculadoraPrint.jpeg" class="cardImage"></a>
+            </div>
+            <div class="p-col-2 ">
+              <p-divider layout="vertical">
+              </p-divider>
+            </div>
+            <div class="p-col-5 p-d-flex p-ai-center p-jc-center">
+              <p>
+                Com a calculadora Metabólica voce pode manter o controle da sua dieta e ficar sabendo todos os dados
+                relacionados a sua taxa metabolica, necessidade energetica total, etc
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- fim do conteiner -->
-      <!-- inicio conteiner -->
-      <div class="card">
-        <h3>Quem Sou Eu</h3><br>
-        <div class="p-grid">
-          <div class="p-col-5 p-d-flex p-ai-center p-jc-center">
-            <a href="SobreMim"><img src="../../../assets/images/planilhasPrint.jpeg" width="50%"></a>
-          </div>
-          <div class="p-col-2">
-            <p-divider layout="vertical">
-            </p-divider>
-          </div>
-          <div class="p-col-5 p-d-flex p-ai-center p-jc-center">
-            <p>
-              Com as planilhas de acompanhamento vooce consegue desenvolver uma disciplina e manter o conotrole sobre
-              a sua alimentação e hábitos inclusive manter o registro de algumas receitas :)
-            </p>
+        <!-- fim do conteiner -->
+        <!-- inicio conteiner -->
+        <div class="card">
+          <h3>Planilhas de Acompanhamento</h3><br>
+          <div class="p-grid">
+            <div class="p-col-5 p-d-flex p-ai-center p-jc-center">
+              <p>
+                Com as planilhas de acompanhamento vooce consegue desenvolver uma disciplina e manter o conotrole sobre
+                a sua alimentação e hábitos inclusive manter o registro de algumas receitas :)
+              </p>
+            </div>
+            <div class="p-col-2">
+              <p-divider layout="vertical">
+              </p-divider>
+            </div>
+            <div class="p-col-5 p-d-flex p-ai-center p-jc-center">
+              <a href="Materiais" routerLink="/Materiais"><img src="../../../assets/images/planilhasPrint.jpeg" class="cardImage"></a>
+            </div>
           </div>
         </div>
+        <!-- fim do conteiner -->
+        <!-- inicio conteiner -->
+        <div class="card">
+          <h3>Quem Sou Eu</h3><br>
+          <div class="p-grid">
+            <div class="p-col-5 p-d-flex p-ai-center p-jc-center">
+              <a href="QuemSouEu" routerLink="/QuemSouEu"><img src="../../../assets/images/planilhasPrint.jpeg" class="cardImage"></a>
+            </div>
+            <div class="p-col-2">
+              <p-divider layout="vertical">
+              </p-divider>
+            </div>
+            <div class="p-col-5 p-d-flex p-ai-center p-jc-center">
+              <p>
+                Com as planilhas de acompanhamento vooce consegue desenvolver uma disciplina e manter o conotrole sobre
+                a sua alimentação e hábitos inclusive manter o registro de algumas receitas :)
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- fim do conteiner -->
       </div>
-      <!-- fim do conteiner -->
     </div>
   </div>
-</div>
