@@ -2,6 +2,7 @@ import { THIS_EXPR, ThrowStmt } from '@angular/compiler/src/output/output_ast';
 import { i18nMetaToJSDoc } from '@angular/compiler/src/render3/view/i18n/meta';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Sexo } from 'src/app/resources/models/Sexo';
+import { Router, Navigation } from '@angular/router';
 
 
 @Component({
@@ -74,7 +75,9 @@ export class CalculatorComponent implements OnInit {
   resultText4: string = "Pare refeições como almoço e jantar divida seu prato na metade. Em uma das metades você colocará apenas salada e vegetais. Na outra metade você coloca proteínas e carboidratos divididos igualmente!";
   resultText5: string = "Aqui embaixo coloquei onde você pode encontrar carboidratos, proteínas e gorduras de qualidade para compor sua alimentação!";
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     this.sexo = new Sexo();
     this.sexos = [{ sexo: "Homem", value: true }, { sexo: "Mulher", value: false }];
   }
@@ -99,6 +102,10 @@ export class CalculatorComponent implements OnInit {
 
   reloadPage() {
     window.location.reload();
+  }
+
+  reloadSamePage() {
+    this.router.navigate(['Inicio']);
   }
 
   firstForm(idadeInput: any, pesoInput: any, alturaInput: any) {

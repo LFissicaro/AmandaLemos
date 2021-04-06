@@ -13,7 +13,7 @@
 <div class="tittle">
     CALCULANDO MEU METABOLISMO
 </div>
-<div class="form0" *ngIf="form0">
+<div class="form0 init" *ngIf="form0">
     <div class="initialText">
         {{initialText}}
     </div>
@@ -159,7 +159,7 @@
     <img class="finalText" src="../../../assets/images/resultList.png">
     <hr><br>
     <button class="calcular2" (click)="openLeadPage()">Download do Resultado</button>
-    <button class="calcular" (click)="reloadPage()">Retornar a pagina inicial</button>
+    <button class="calcular" (click)="reloadSamePage()">Retornar a pagina inicial</button>
 </div>
 <div class="back-to-top" (click)="backToTop()" href="#"></div>
 

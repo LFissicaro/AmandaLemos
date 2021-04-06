@@ -1,27 +1,61 @@
 //mobile
+$beje: #fffef6;
 @media (max-width: 599px){
 
+    .link{
+        width: 12%;
+    }
+
+    .name{
+        margin-top: 3%
+    }
+
     .lf{
+        color: $beje;
         margin-top: 4%;
         font-size: 10px;
     }
 
+    .elements{ 
+        color: $beje;
+        display: flex;
+        justify-content: center;
+    }
     .icone{
         cursor: pointer;
-        width: 10%;
+    }
+    .icon{        
+        width: 80%;
     }
 }
 
 //pc
 @media (min-width: 600px){
 
+    .link{
+        margin-top: 1%;
+        width: 8%;
+    }
+
+    .name{
+        margin-top: 2%
+    }
+
     .lf{
+        color: $beje;
         margin-top: 2%;
         font-size: 20px;
     }
 
+    .elements{ 
+        color: $beje;
+        display: flex;
+        justify-content: center;
+    }
     .icone{
         cursor: pointer;
-        width: 3%;
+    }
+    .icon{        
+        width: 30%;
     }
 }

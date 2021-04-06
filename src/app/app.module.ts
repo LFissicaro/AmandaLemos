@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,8 @@ import { CardModule } from 'primeng/card';
 import { AboutComponent } from './components/about/about.component';
 import { DividerModule } from 'primeng/divider';
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
+import { GalleriaModule } from 'primeng/galleria';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,9 +47,11 @@ import { Ng2CarouselamosModule } from 'ng2-carouselamos';
     CardModule,
     DividerModule,
     Ng2CarouselamosModule,
+    GalleriaModule,
+    HttpClientModule,
     SelectButtonModule
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

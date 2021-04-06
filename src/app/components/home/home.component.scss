@@ -42,11 +42,21 @@ $rosa: #d54062;
         background:$beje;
     }
     
-    .items {
+    .carous{
         width: 100%;
-        max-width:500px;
-        height:400px;
+    }
+
+    .mob{ 
+        position: relative;
+        margin-left: -10%;
+    }
+    
+    .items {
+        width: 120%;
+        height:500px;
         background:$beje;
+        text-align: center;
+        vertical-align: middle;
     }
     
     #left, #right { 
@@ -96,8 +106,8 @@ $rosa: #d54062;
     }
     
     .carous{
-        width: 46%;
-        margin-left: 27%;
+        width: 50%;
+        margin-left: 25%;
     }
 
     .items {

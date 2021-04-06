@@ -1,24 +1,16 @@
 <div class="tittle" style="margin-top: 2%;">Instagram</div>
 <div id="container">
-  <!-- carousel -->
-  <div ng2-carouselamos class="slides-wrapper carous" [items]="items" [width]="900" [$prev]="prev" [$next]="next"
-    [$item]="item">
+  <!-- galleria -->
+  <button (click)="sendMail()">MAIL</button>
+  <div class="carous">
+    <p-galleria [value]="items" [containerStyle]="{'max-width': '411px'}" [showThumbnails]="false"
+      [showIndicators]="true" [autoPlay]="true" [transitionInterval]="4000">
+      <ng-template pTemplate="item" let-item>
+        <a href='{{item?.link}}'><img [src]="item?.name" /></a>
+      </ng-template>
+    </p-galleria>
   </div>
-
-  <ng-template #prev>
-    <i class="pi pi-angle-double-left" style="cursor: pointer;"></i>
-  </ng-template>
-  <ng-template #next>
-    <i class="pi pi-angle-double-right" style="cursor: pointer;"></i>
-  </ng-template>
-  <ng-template #item let-item let-i="index">
-
-    <div class="items" style="width: 100%;">
-      <img src="{{ item.name }}">
-    </div>
-
-  </ng-template>
-  <!-- carousel -->
+  <!-- galleria -->
   <div class="firstBlock">
     <div class="p-grid p-jc-center">
       <div class="p-col-5 responsive" style="border: 10px;border-color: #333333;">
@@ -27,7 +19,8 @@
           <h3>Calculadora Metabólica</h3><br>
           <div class="p-grid">
             <div class="p-col-5 p-d-flex p-ai-center p-jc-center">
-              <a href="Calculadora" routerLink="/Calculadora"><img src="../../../assets/images/calculadoraPrint.jpeg" class="cardImage"></a>
+              <a href="Calculadora" routerLink="/Calculadora"><img src="../../../assets/images/calculadoraPrint.jpeg"
+                  class="cardImage"></a>
             </div>
             <div class="p-col-2 ">
               <p-divider layout="vertical">
@@ -35,8 +28,8 @@
             </div>
             <div class="p-col-5 p-d-flex p-ai-center p-jc-center">
               <p>
-                Com a calculadora Metabólica voce pode manter o controle da sua dieta e ficar sabendo todos os dados
-                relacionados a sua taxa metabolica, necessidade energetica total, etc
+                Com a calculadora Metabólica você pode manter o controle da sua dieta e ficar sabendo todos os dados
+                relacionados a sua taxa metabólica, necessidade energética total, etc
               </p>
             </div>
           </div>
@@ -48,7 +41,7 @@
           <div class="p-grid">
             <div class="p-col-5 p-d-flex p-ai-center p-jc-center">
               <p>
-                Com as planilhas de acompanhamento vooce consegue desenvolver uma disciplina e manter o conotrole sobre
+                Com as planilhas de acompanhamento você consegue desenvolver uma disciplina e manter o controle sobre
                 a sua alimentação e hábitos inclusive manter o registro de algumas receitas :)
               </p>
             </div>
@@ -57,7 +50,8 @@
               </p-divider>
             </div>
             <div class="p-col-5 p-d-flex p-ai-center p-jc-center">
-              <a href="Materiais" routerLink="/Materiais"><img src="../../../assets/images/planilhasPrint.jpeg" class="cardImage"></a>
+              <a href="Materiais" routerLink="/Materiais"><img src="../../../assets/images/planilhasPrint.jpeg"
+                  class="cardImage"></a>
             </div>
           </div>
         </div>
@@ -67,7 +61,8 @@
           <h3>Quem Sou Eu</h3><br>
           <div class="p-grid">
             <div class="p-col-5 p-d-flex p-ai-center p-jc-center">
-              <a href="QuemSouEu" routerLink="/QuemSouEu"><img src="../../../assets/images/planilhasPrint.jpeg" class="cardImage"></a>
+              <a href="QuemSouEu" routerLink="/QuemSouEu"><img src="../../../assets/images/bonequinha.png"
+                  class="cardImage"></a>
             </div>
             <div class="p-col-2">
               <p-divider layout="vertical">
@@ -75,8 +70,8 @@
             </div>
             <div class="p-col-5 p-d-flex p-ai-center p-jc-center">
               <p>
-                Com as planilhas de acompanhamento vooce consegue desenvolver uma disciplina e manter o conotrole sobre
-                a sua alimentação e hábitos inclusive manter o registro de algumas receitas :)
+                Compartilho meu dia a dia no instagram, tiro várias dúvidas de diversos assuntos e busco, de alguma
+                forma, ajudar quem me acompanha nessa mudança de estilo de vida!
               </p>
             </div>
           </div>

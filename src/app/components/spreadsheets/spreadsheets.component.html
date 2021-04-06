@@ -1,8 +1,8 @@
 <div class="tittle">
     Materiais de Acompanhamento
 </div>
-<div class="spreadsheets">
-    <hr><br><br>
+<div class="spreadsheets" *ngIf="materials && !cloud">
+    <br><br>
     <h4>Clique na foto do material desejado para fazer o download dos arquivos</h4><br><br>
     <div class="p-grid">
         <!--grid-->
@@ -10,13 +10,12 @@
         <div class="p-col">
             <p-card header="Cardápio">
                 <div class="plnText">
-                    <p>Planílha para voce manter o controle da sua alimentação</p>
+                    <p>Planilha para você manter o controle da sua alimentação</p>
                     <br>
                 </div>
                 <div class="plnCard">
-                    <a href="../../../assets/Download/Cardapio.png"
-                        download="../../../assets/Download/Cardapio.png"><img class="cardimg" alt="Card"
-                            src="../../../assets/Download/Cardapio.png"></a>
+                    <a href="../../../assets/Download/Cardapio.png" download="Cardapio.png"><img class="cardimg"
+                            alt="Card" src="../../../assets/Download/Cardapio.png"></a>
                 </div>
             </p-card>
         </div>
@@ -25,13 +24,12 @@
         <div class="p-col">
             <p-card header="Lista De Compras">
                 <div class="plnText">
-                    <p>Planílha para voce monitorar a lista de compras</p>
+                    <p>Planilha para você monitorar a lista de compras</p>
                     <br>
                 </div>
                 <div class="plnCard">
-                    <a href="../../../assets/Download/ListaDeCompras.png"
-                        download="../../../assets/Download/ListaDeCompras.png"><img class="cardimg" alt="Card"
-                            src="../../../assets/Download/ListaDeCompras.png"></a>
+                    <a href="../../../assets/Download/ListaDeCompras.png" download="ListaDeCompras.png"><img
+                            class="cardimg" alt="Card" src="../../../assets/Download/ListaDeCompras.png"></a>
                 </div>
             </p-card>
         </div>
@@ -40,26 +38,44 @@
         <div class="p-col">
             <p-card header="Monitorar Hábitos">
                 <div class="plnText">
-                    <p>Planílha para voce monitorar os seus hábitos alimentares</p>
+                    <p>Planilha para você monitorar os seus hábitos alimentares</p>
                     <br>
                 </div>
                 <div class="plnCard"> <a href="../../../assets/Download/MonitoramentoHabitos.png"
-                        download="../../../assets/Download/MonitoramentoHabitos.png"><img class="cardimg" alt="Card"
+                        download="MonitoramentoHabitos.png"><img class="cardimg" alt="Card"
                             src="../../../assets/Download/MonitoramentoHabitos.png"></a>
                 </div>
             </p-card>
         </div>
         <!--coluna-->
+    </div>
+    <div class="p-grid">
+        <br>
         <!--coluna-->
         <div class="p-col">
             <p-card header="Receitas">
                 <div class="plnText">
-                    <p>Planílha para voce anotar suas receitas</p>
+                    <p>Planilha para você anotar suas receitas</p>
                     <br>
                 </div>
-                <div class="plnCard"> <a href="../../../assets/Download/Receita.png"
-                        download="../../../assets/Download/Receita.png"><img class="cardimg" alt="Card"
-                            src="../../../assets/Download/Receita.png"></a>
+                <div class="plnCard"> <a href="../../../assets/Download/Receita.png" download="Receita.png"><img
+                            class="cardimg" alt="Card" src="../../../assets/Download/Receita.png"></a>
+                </div>
+            </p-card>
+        </div>
+        <!--coluna-->
+        <!--coluna-->
+        <!-- planilhas online -->
+        <div class="p-col">
+            <p-card header="Planilhas Online">
+                <div class="plnText">
+                    <br><br><br>
+                    <p>Planilha para você poder baixar diretamente da minha nuvem!</p>
+                    <br><br><br>
+                </div>
+                <div class="plnCard">
+                    <a (click)="switchCloud()">
+                        <img class="cardimg" alt="Card" src="../../../assets/Download/calculoCalorias.jpeg"></a>
                 </div>
             </p-card>
         </div>
@@ -68,15 +84,240 @@
         <div class="p-col">
             <p-card header="Escala Bristol">
                 <div class="plnText">
-                    <p>Imagens para voce manter o controle da saúde do seu cocô</p>
+                    <br>
+                    <p>Descubra como controlar a saúde do seu cocô</p>
                     <br>
                 </div>
-                <div class="plnCard"> <a href="" download="../../../assets/Download/EscalaBristol.zip"><img
-                            class="cardimg" alt="Card" src="../../../assets/Download/coco.png"></a>
+                <div class="plnCard">
+                    <a (click)="switchMaterials()" style="cursor: pointer;"><img class="cardimg" alt="Card"
+                            src="../../../assets/Download/coco.png"></a>
                 </div>
             </p-card>
         </div>
         <!--coluna-->
+    </div>
+</div>
+<!-- CLOUD -->
+<div class="cloud" *ngIf="cloud">
+    <br>
+    <div class="ttl">
+        <h4>
+            Aqui voce encontra nossa planilhas online para poder baixar e utilizar SEMPRE! <br> Segue abaixo um tutorial
+            de como usar :)
+        </h4>
+    </div>
+    <div class="tutorial">
+        <h3>Após clicar na planilha e acessar a nossa nuvem basta seguir os passos abaixo:</h3><br>
+        <h5>*lembrando que para editar as planilhas no celular você precisa ter o app 'Planilhas' do Google instalado!*</h5><br>
+        <div class="p-grid">
+            <div class="p-col">
+                <p>1.Primeiro clique aqui...</p>
+                <img src="../../../assets/images/tutorial/1.png" alt="">
+            </div>
+            <div class="p-col">
+                <p>2.Então clique aqui...</p>
+                <img src="../../../assets/images/tutorial/2.png" alt="">
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-col">
+                <p>3.Ai só precisa esperar baixar...</p>
+                <img src="../../../assets/images/tutorial/3.png" alt="">
+            </div>
+            <div class="p-col">
+                <p>4.Pronto agora voce tem sua planilha!!</p>
+                <img src="../../../assets/images/tutorial/4.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="p-grid p-jc-center cloudMat">
+        <!-- coluna -->
+        <div class="p-col">
+            <p-card header="Cálculo de Calorias">
+                <div class="plnText">
+                    <br>
+                    <p>Planilha para você poder calcular a quantidade de calorias gastas!!</p>
+                    <br><br><br>
+                </div>
+                <div class="plnCard2">
+                    <a
+                        href="https://docs.google.com/spreadsheets/d/1PirC_NqqdsXovEUQJ8vqKJYj8Xjut4y75Yg_y4SDLck/edit#gid=7601787">
+                        <img class="cardimg" alt="Card" src="../../../assets/Download/calculoCalorias.jpeg"></a>
+                </div>
+            </p-card>
+        </div>
+        <!-- coluna -->
+        <div class="p-col">
+            <p-card header="Distenção Abdominal">
+                <div class="plnText">
+                    <p>Planilha para você monitorar seus desconfortos digestivos e descobrir o que te causa distensão abdominal</p>
+                    <br>
+                </div>
+                <div class="plnCard2">
+                    <a href="https://docs.google.com/spreadsheets/d/1YFBrjeOyEn-100Yc9knM3jsxJHj3AEMAdOqj-iF6rQ8/edit">
+                        <img class="cardimg" alt="Card" src="../../../assets/Download/distencaoAbdominal.jpeg"></a>
+                </div>
+            </p-card>
+        </div>
+        <!-- coluna -->
+    </div>
+    <button class="retornar" (click)="cloud = !cloud">Retornar a pagina de materiais</button>
+</div>
+<!-- CLOUD -->
+<div class="coco" *ngIf="!materials && !type">
+    <br>
+    <h4>Selecione o seu tipo de cocô</h4>
+    <div class="p-grid" style="width: 60%; margin-left: 20%; margin-top: 1%">
+        <div class="p-col">
+            <p-card header="Tipo 1">
+                <div class="plnText">
+                    <p>Pedaços separados, duros como amendoim</p>
+                    <br><br>
+                </div>
+                <div class="plnCard2"><img src="../../../assets/Download/bristol/1.png"
+                        style="width: 100%;cursor: pointer;" (click)="switchToType(1)"></div>
+            </p-card>
+        </div>
+        <div class="p-col">
+            <p-card header="Tipo 2">
+                <div class="plnText">
+                    <p>Forma de salcicha mas segmentada</p>
+                    <br><br><br>
+                </div>
+                <div class="plnCard2"><img src="../../../assets/Download/bristol/2.png"
+                        style="width: 100%;cursor: pointer;" (click)="switchToType(1)"></div>
+            </p-card>
+        </div>
+        <div class="p-col">
+            <p-card header="Tipo 3">
+                <div class="plnText">
+                    <p>Forma de salsicha, mas com fendas na superfície</p>
+                    <br>
+                </div>
+                <div class="plnCard2"><img src="../../../assets/Download/bristol/3.png"
+                        style="width: 100%;cursor: pointer;" (click)="switchToType(1)"></div>
+            </p-card>
+        </div>
+        <div class="p-col">
+            <p-card header="Tipo 4">
+                <div class="plnText">
+                    <p>Forma de salsicha ou cobra, lisa e mole</p>
+                    <br><br>
+                </div>
+                <div class="plnCard2"><img src="../../../assets/Download/bristol/4.png"
+                        style="width: 100%;cursor: pointer;" (click)="switchToType(2)"></div>
+            </p-card>
+        </div>
+        <div class="p-col">
+            <p-card header="Tipo 5">
+                <div class="plnText">
+                    <p>Pedaços moles, mas contornos nítidos</p>
+                    <br><br>
+                </div>
+                <div class="plnCard2"><img src="../../../assets/Download/bristol/5.png"
+                        style="width: 100%;cursor: pointer;" (click)="switchToType(3)"></div>
+            </p-card>
+        </div>
+        <div class="p-col">
+            <p-card header="Tipo 6">
+                <div class="plnText">
+                    <p>Pedaços aerados, contornos esgarçados</p>
+                    <br><br>
+                </div>
+                <div class="plnCard2"><img src="../../../assets/Download/bristol/6.png"
+                        style="width: 100%;cursor: pointer;" (click)="switchToType(3)"></div>
+            </p-card>
+        </div>
+        <div class="p-col">
+            <p-card header="Tipo 7">
+                <div class="plnText">
+                    <p>Aquosa, sem peças sólidas</p>
+                    <br><br><br>
+                </div>
+                <div class="plnCard2"><img src="../../../assets/Download/bristol/7.png"
+                        style="width: 100%;cursor: pointer;" (click)="switchToType(3)"></div>
+            </p-card>
+        </div>
+    </div>
+    <button class="retornar" (click)="switchMaterials()">Retornar a pagina de materiais</button>
+</div>
+<div *ngIf="type">
+    <div class="p-grid p-jc-center" *ngIf="type1">
+        <div class="p-col">
+            <br>
+            <h4>Do tipo 1 ao 3</h4>
+            <div class="p-col type1">
+                <div class="imgs">
+                    <div class="p-col">
+                        <div class="plnCard2">
+                            <img src="../../../assets/Download/bristol/1.png" style="width: 100%;cursor: pointer;">
+                        </div>
+                    </div>
+                    <div class="p-col">
+                        <div class="plnCard2">
+                            <img src="../../../assets/Download/bristol/2.png" style="width: 100%;cursor: pointer;">
+                        </div>
+                    </div>
+                    <div class="p-col">
+                        <div class="plnCard2">
+                            <img src="../../../assets/Download/bristol/3.png" style="width: 100%;cursor: pointer;">
+                        </div>
+                    </div>
+                </div>
+                <div class="cocoTxt">
+                    {{text1}}
+                </div>
+            </div>
+            <button class="retornar" (click)="goToMaterials()">Voltar a tela de materiais</button>
+        </div>
+    </div>
+    <div class="p-grid p-jc-center" *ngIf="type2">
+        <div class="p-col">
+            <br>
+            <h4>Do tipo 4</h4>
+            <div class="p-col-4 p-jc-center type2">
+                <div class="imgs2">
+                    <div class="p-col">
+                        <div class="plnCard2">
+                            <img src="../../../assets/Download/bristol/4.png" style="width: 100%;cursor: pointer;">
+                        </div>
+                    </div>
+                </div>
+                <div class="cocoTxt">
+                    {{text2}}
+                </div>
+            </div>
+            <button class="retornar" (click)="goToMaterials()">Voltar a tela de materiais</button>
+        </div>
+    </div>
+    <div class="p-grid p-jc-center" *ngIf="type3">
+        <div class="p-col">
+            <br>
+            <h4>Do tipo 5 ao 7</h4>
+            <div class="p-col type1">
+                <div class="imgs">
+                    <div class="p-col">
+                        <div class="plnCard2">
+                            <img src="../../../assets/Download/bristol/5.png" style="width: 100%;cursor: pointer;">
+                        </div>
+                    </div>
+                    <div class="p-col">
+                        <div class="plnCard2">
+                            <img src="../../../assets/Download/bristol/6.png" style="width: 100%;cursor: pointer;">
+                        </div>
+                    </div>
+                    <div class="p-col">
+                        <div class="plnCard2">
+                            <img src="../../../assets/Download/bristol/7.png" style="width: 100%;cursor: pointer;">
+                        </div>
+                    </div>
+                </div>
+                <div class="cocoTxt">
+                    {{text3}}
+                </div>
+            </div>
+            <button class="retornar" (click)="goToMaterials()">Voltar a tela de materiais</button>
+        </div>
     </div>
 </div>
 <div class="back-to-top" (click)="backToTop()" href="#"></div>
