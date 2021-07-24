@@ -261,4 +261,8 @@ export class CalculatorComponent implements OnInit {
     window.print();
   }
 
+  createImage(){
+    
+  }
+
 }

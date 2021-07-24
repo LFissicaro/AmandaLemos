@@ -106,8 +106,8 @@ $rosa: #d54062;
     }
     
     .carous{
-        width: 50%;
-        margin-left: 25%;
+        display: flex;
+        justify-content: center;
     }
 
     .items {
